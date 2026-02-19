@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/RideTracking.css';
 
 export default function RideTracking({ onPageChange }) {
   const [progress, setProgress] = useState(0);

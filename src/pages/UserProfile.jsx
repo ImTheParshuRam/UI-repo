@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../styles/UserProfile.css';
 
 export default function UserProfile({ userType = 'passenger', onPageChange }) {
   const [activeTab, setActiveTab] = useState('account');

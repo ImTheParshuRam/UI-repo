@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../styles/AdminDashboard.css';
 
 export default function AdminDashboard({ onPageChange }) {
   const [activeTab, setActiveTab] = useState('overview');

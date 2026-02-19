@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../styles/DriverDashboard.css';
 
 export default function DriverDashboard({ onPageChange }) {
   const [isOnline, setIsOnline] = useState(false);

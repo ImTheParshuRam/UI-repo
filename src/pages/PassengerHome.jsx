@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../styles/PassengerHome.css';
 
 export default function PassengerHome({ onPageChange }) {
   const [pickupLocation, setPickupLocation] = useState('');

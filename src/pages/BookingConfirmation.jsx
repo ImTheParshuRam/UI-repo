@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/BookingConfirmation.css';
 
 export default function BookingConfirmation({ bookingData, onPageChange }) {
   const [rideStatus, setRideStatus] = useState('searching');
