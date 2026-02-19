@@ -339,6 +339,36 @@
 }
 
 /* Responsive Design */
+/* FAB AI Button */
+.fab-ai-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 98;
+}
+
+.fab-ai-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.5);
+}
+
+.fab-ai-button:active {
+  transform: scale(0.95);
+}
+
 @media (max-width: 768px) {
 
   .form-row,

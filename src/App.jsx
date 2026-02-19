@@ -22,6 +22,10 @@ import UserRideTracking from './components/CabBooking/UserRideTracking';
 import DriverDashboardSimple from './components/CabDriver/DriverDashboardSimple';
 import QuickAccess from './components/QuickAccess/QuickAccess';
 import NotificationToast from './components/Notifications/NotificationToast';
+import AIAssistant from './components/AIAssistant/AIAssistant';
+import DemoShowcase from './components/Demo/DemoShowcase';
+import FeaturesDemo from './components/Demo/FeaturesDemo';
+import QuickStart from './components/Demo/QuickStart';
 
 function App() {
   const [userRole, setUserRole] = useState(null); // 'passenger' or 'driver'
@@ -32,6 +36,7 @@ function App() {
   const [pickupLocation, setPickupLocation] = useState(null);
   const [dropLocation, setDropLocation] = useState(null);
   const [driverData, setDriverData] = useState(null);
+  const [isAIAssistantOpen, setIsAIAssistantOpen] = useState(false);
 
 
   useEffect(() => {
@@ -108,6 +113,12 @@ function App() {
 
   const renderCurrentPage = () => {
     switch (currentPage) {
+      case 'demo':
+        return <DemoShowcase />;
+      case 'features':
+        return <FeaturesDemo onPageChange={handlePageChange} />;
+      case 'quickstart':
+        return <QuickStart onPageChange={handlePageChange} />;
       case 'home':
         if (userRole === 'driver') {
           return <DriverDashboardSimple cab={cab} onLogout={handleCabLogout} />;
@@ -193,6 +204,16 @@ function App() {
     >
       {renderCurrentPage()}
       <NotificationToast />
+      <AIAssistant isOpen={isAIAssistantOpen} onClose={() => setIsAIAssistantOpen(false)} />
+      {!isAIAssistantOpen && (
+        <button 
+          className="fab-ai-button" 
+          onClick={() => setIsAIAssistantOpen(true)}
+          title="Open AI Assistant"
+        >
+          <span>💬</span>
+        </button>
+      )}
     </MainLayout>
   );
 }

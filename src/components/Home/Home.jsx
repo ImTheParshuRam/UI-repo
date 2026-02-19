@@ -23,6 +23,14 @@ const Home = ({ user, onPageChange }) => {
 
   return (
     <div className="dashboard-container">
+      {/* Demo Button */}
+      <div className="demo-banner">
+        <span>🎨 Want to see all features?</span>
+        <button className="demo-banner-btn" onClick={() => onPageChange('demo')}>
+          View Demo →
+        </button>
+      </div>
+
       {/* Header Section */}
       <header className="dashboard-header">
         <div className="header-greeting">
