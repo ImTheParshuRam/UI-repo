@@ -126,6 +126,24 @@ export default function PassengerHome({ onPageChange }) {
           <p>Help whenever you need it</p>
         </div>
       </div>
+
+      <div className="navigation-buttons">
+        <h3>Explore More</h3>
+        <div className="nav-buttons-grid">
+          <button className="nav-btn nav-btn-primary" onClick={() => onPageChange('ride-tracking-page')}>
+            Track Ride →
+          </button>
+          <button className="nav-btn nav-btn-secondary" onClick={() => onPageChange('user-profile-page')}>
+            My Profile →
+          </button>
+          <button className="nav-btn nav-btn-tertiary" onClick={() => onPageChange('booking-confirmation')}>
+            View Confirmation →
+          </button>
+          <button className="nav-btn nav-btn-quaternary" onClick={() => onPageChange('navigation-hub')}>
+            Back to Hub
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

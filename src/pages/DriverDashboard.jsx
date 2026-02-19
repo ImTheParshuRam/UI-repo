@@ -134,10 +134,29 @@ export default function DriverDashboard({ onPageChange }) {
         </button>
         <button 
           className="action-btn"
-          onClick={() => onPageChange('user-profile')}
+          onClick={() => onPageChange('user-profile-page')}
         >
           👤 Profile Settings
         </button>
+      </div>
+
+      <div className="driver-navigation">
+        <div className="nav-divider"></div>
+        <h3>Explore More</h3>
+        <div className="nav-buttons">
+          <button className="nav-btn nav-primary" onClick={() => onPageChange('ride-tracking-page')}>
+            Track Ride →
+          </button>
+          <button className="nav-btn nav-secondary" onClick={() => onPageChange('passenger-home')}>
+            Passenger View →
+          </button>
+          <button className="nav-btn nav-tertiary" onClick={() => onPageChange('admin-dashboard')}>
+            Admin Panel →
+          </button>
+          <button className="nav-btn nav-back" onClick={() => onPageChange('navigation-hub')}>
+            Back to Hub
+          </button>
+        </div>
       </div>
     </div>
   );

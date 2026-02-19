@@ -1,5 +1,5 @@
 window.global = window;
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navigation from './components/Navigation/Navigation';
 import MainLayout from './components/Layout/MainLayout';
 import RoleSelection from './components/RoleSelection/RoleSelection';
@@ -26,12 +26,19 @@ import AIAssistant from './components/AIAssistant/AIAssistant';
 import DemoShowcase from './components/Demo/DemoShowcase';
 import FeaturesDemo from './components/Demo/FeaturesDemo';
 import QuickStart from './components/Demo/QuickStart';
+import PassengerHome from './pages/PassengerHome';
+import DriverDashboard from './pages/DriverDashboard';
+import AdminDashboard from './pages/AdminDashboard';
+import RideTracking from './pages/RideTracking';
+import BookingConfirmation from './pages/BookingConfirmation';
+import UserProfilePage from './pages/UserProfile';
+import NavigationHub from './pages/NavigationHub';
 
 function App() {
   const [userRole, setUserRole] = useState(null); // 'passenger' or 'driver'
   const [user, setUser] = useState(null);
   const [cab, setCab] = useState(null);
-  const [currentPage, setCurrentPage] = useState('home');
+  const [currentPage, setCurrentPage] = useState('navigation-hub');
   const [selectedBooking, setSelectedBooking] = useState(null);
   const [pickupLocation, setPickupLocation] = useState(null);
   const [dropLocation, setDropLocation] = useState(null);
@@ -113,12 +120,26 @@ function App() {
 
   const renderCurrentPage = () => {
     switch (currentPage) {
+      case 'navigation-hub':
+        return <NavigationHub onPageChange={handlePageChange} />;
       case 'demo':
         return <DemoShowcase />;
       case 'features':
         return <FeaturesDemo onPageChange={handlePageChange} />;
       case 'quickstart':
         return <QuickStart onPageChange={handlePageChange} />;
+      case 'passenger-home':
+        return <PassengerHome onPageChange={handlePageChange} />;
+      case 'driver-dashboard-page':
+        return <DriverDashboard onPageChange={handlePageChange} />;
+      case 'admin-dashboard':
+        return <AdminDashboard onPageChange={handlePageChange} />;
+      case 'ride-tracking-page':
+        return <RideTracking onPageChange={handlePageChange} />;
+      case 'booking-confirmation':
+        return <BookingConfirmation onPageChange={handlePageChange} />;
+      case 'user-profile-page':
+        return <UserProfilePage onPageChange={handlePageChange} />;
       case 'home':
         if (userRole === 'driver') {
           return <DriverDashboardSimple cab={cab} onLogout={handleCabLogout} />;
