@@ -10,8 +10,5 @@ export default defineConfig({
         '.js': 'jsx'
       }
     }
-  },
-  server: {
-    middlewareMode: true
   }
 })
