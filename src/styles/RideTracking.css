@@ -1,0 +1,343 @@
+.ride-tracking {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  padding: 20px;
+}
+
+.tracking-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.back-btn {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(99, 102, 241, 0.1));
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(99, 102, 241, 0.2));
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.tracking-header h2 {
+  margin: 0;
+  color: white;
+  flex: 1;
+}
+
+.tracking-container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+}
+
+.map-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.map-placeholder {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.eta {
+  display: inline-block;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.route-visual {
+  width: 100%;
+  height: 300px;
+  margin-top: 40px;
+}
+
+.map-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.legend-item::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-item.pickup::before {
+  background-color: #10b981;
+}
+
+.legend-item.current::before {
+  background-color: #6366f1;
+}
+
+.legend-item.dropoff::before {
+  background-color: #ef4444;
+}
+
+.driver-tracking {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.driver-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.driver-photo {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.driver-info {
+  flex: 1;
+}
+
+.driver-info h3 {
+  margin: 0 0 4px 0;
+  color: white;
+}
+
+.driver-info p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.call-icon {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(99, 102, 241, 0.2));
+  border: none;
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.call-icon:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.5), rgba(99, 102, 241, 0.4));
+  transform: scale(1.1);
+}
+
+.ride-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.details-section {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.progress-tracker {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+.step-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(99, 102, 241, 0.1));
+  border: 2px solid rgba(99, 102, 241, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.step.active .step-icon {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-color: #6366f1;
+  color: white;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.step-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.step.active .step-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.step-line {
+  height: 2px;
+  background: rgba(99, 102, 241, 0.2);
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.ride-details-card {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(99, 102, 241, 0.04));
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.ride-details-card h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: white;
+  font-size: 1rem;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.detail:last-child {
+  border-bottom: none;
+}
+
+.detail span {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.detail strong {
+  color: white;
+  font-weight: 600;
+}
+
+.detail .price {
+  color: #6366f1;
+  font-weight: 700;
+}
+
+.fare-breakdown {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(139, 92, 246, 0.04));
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.fare-breakdown h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: white;
+  font-size: 1rem;
+}
+
+.fare-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.fare-item.total {
+  border-top: 1px solid rgba(139, 92, 246, 0.2);
+  padding-top: 12px;
+  margin-top: 8px;
+  font-weight: 700;
+  color: white;
+}
+
+.full-width {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .tracking-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ride-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .details-section {
+    order: -1;
+  }
+
+  .map-placeholder {
+    min-height: 200px;
+  }
+
+  .route-visual {
+    height: 200px;
+  }
+}

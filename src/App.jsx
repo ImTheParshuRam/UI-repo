@@ -1,5 +1,5 @@
 window.global = window;
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Navigation from './components/Navigation/Navigation';
 import MainLayout from './components/Layout/MainLayout';
 import RoleSelection from './components/RoleSelection/RoleSelection';
